@@ -73,6 +73,22 @@ export function Module2() {
         </span>
       </div>
 
+      {/* method signature — classical 4-stage RK4 */}
+      <div className="mb-3 overflow-x-auto rounded-lg border border-white/[0.06] bg-white/[0.02] px-3.5 py-2.5">
+        <div className="flex min-w-max items-baseline gap-x-3 gap-y-1 font-mono text-[10.5px] text-steel-400">
+          <span className="text-[9px] font-semibold uppercase tracking-[0.2em] text-cy-400">
+            Method
+          </span>
+          <span className="tabular text-steel-300">
+            C<sub>n+1</sub> = C<sub>n</sub> + (h/6)·(k₁ + 2k₂ + 2k₃ + k₄)
+          </span>
+          <span className="text-steel-600">|</span>
+          <span className="tabular">f(C) = −k·C · 4 stages/step</span>
+          <span className="text-steel-600">|</span>
+          <span className="tabular text-em-400/80">local O(h⁵) · global O(h⁴)</span>
+        </div>
+      </div>
+
       <SimChart t={sim.t} rk4={sim.c} ana={ana} showRk4={showRk4} showAna={showAna} runId={runId} />
 
       {/* terminal readouts */}
